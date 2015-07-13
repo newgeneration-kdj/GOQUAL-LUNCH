@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GOQUALLUNCH</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="DIALOG_NEW_MENU_TITLE">WHAT IS YOUR NEW MENU?</string>
+    <string name="DIALOG_NEW_MENU_BTN_SAVE">SAVE</string>
+    <string name="DIALOG_NEW_MENU_BTN_CANCEL">CANCEL</string>
+</resources>
