@@ -37,7 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<MenuItemViewHoler>
     @Override
     public void onBindViewHolder(MenuItemViewHoler viewHolder, int position) {
         MenuDTO item = mListMenu.get(position);
-        viewHolder.mTxtMenu.setText(item.getMenu());
+        viewHolder.mTxtMenu.setText(item.Label);
     }
 
     @Override
