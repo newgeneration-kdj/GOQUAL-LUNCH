@@ -3,6 +3,7 @@ package com.goqual.goquallunch.Handler;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 
@@ -20,7 +21,8 @@ public class JsonHandler<T> {
         for(int i = 0; i < arrayJson.length(); i ++) {
             try {
                 String jsonStr = arrayJson.get(i).toString();
-                T val = new Gson().fromJson(jsonStr, classType);
+                Gson gSon = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+                T val = gSon.fromJson(jsonStr, classType);
                 mReturnVal.add(val);
 
             } catch (Exception e) {

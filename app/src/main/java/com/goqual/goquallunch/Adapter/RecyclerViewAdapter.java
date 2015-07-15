@@ -37,11 +37,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<MenuItemViewHoler>
     @Override
     public void onBindViewHolder(MenuItemViewHoler viewHolder, int position) {
         MenuDTO item = mListMenu.get(position);
-        viewHolder.mTxtMenu.setText(item.Label);
+        viewHolder.mTxtMenu.setText(item.label);
+        if (item.hit == 0) {
+            viewHolder.mTxtHit.setText(mContext.getString(R.string.NEVER_EVER_EATEN));
+        } else {
+            viewHolder.mTxtHit.setText("eat " + item.hit + " times");
+        }
+
+        String number = item.number;
+        if (!number.startsWith("0")) { number = "0" + number; }
+        viewHolder.mTxtNum.setText(number);
     }
 
     @Override
     public int getItemCount() {
         return mListMenu.size();
     }
+
+    public void addMenu(String label, String number) {
+        mListMenu.add(new MenuDTO(label));
+        notifyItemInserted(0);
+    }
+
 }

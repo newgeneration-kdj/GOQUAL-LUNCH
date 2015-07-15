@@ -42,20 +42,33 @@
                             android:id="@+id/card_txt_menu_name"
                             android:layout_alignParentLeft="true"
                             android:layout_marginLeft="15sp"
+                            android:textColor="@color/text_black"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_weight="50"
+                        android:minHeight="50sp"
                         android:layout_height="match_parent">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="2015-07-13"
-                            android:id="@+id/card_txt_menu_date"
+                            android:text="01062338509"
+                            android:id="@+id/card_txt_menu_num"
                             android:textSize="12sp"
+                            android:textColor="@color/gray_hight"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="eat 2 times"
+                            android:id="@+id/card_txt_menu_hit"
+                            android:textSize="12sp"
+                            android:layout_below="@+id/card_txt_menu_num"
                             android:textColor="@color/gray_hight"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true" />

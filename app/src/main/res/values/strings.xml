@@ -8,4 +8,6 @@
     <string name="DIALOG_NEW_MENU_TITLE">WHAT IS YOUR NEW MENU?</string>
     <string name="DIALOG_NEW_MENU_BTN_SAVE">SAVE</string>
     <string name="DIALOG_NEW_MENU_BTN_CANCEL">CANCEL</string>
+
+    <string name="NEVER_EVER_EATEN">never ever eaten</string>
 </resources>
