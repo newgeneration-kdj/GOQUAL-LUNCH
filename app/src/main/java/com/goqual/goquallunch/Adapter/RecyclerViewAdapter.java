@@ -54,6 +54,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<MenuItemViewHoler>
         return mListMenu.size();
     }
 
+    public void setItems(ArrayList<MenuDTO> items) {
+        mListMenu = items;
+    }
+
     public void addMenu(String label, String number) {
         mListMenu.add(new MenuDTO(label));
         notifyItemInserted(0);

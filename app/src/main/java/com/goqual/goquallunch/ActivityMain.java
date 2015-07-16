@@ -37,6 +37,8 @@ public class ActivityMain extends AppCompatActivity {
     private RecyclerViewAdapter mRecyclerViewAdapter;
     private static ArrayList<MenuDTO> mListItems = new ArrayList<MenuDTO>() {};
 
+    //private MenuList mListItems = new MenuList<MenuDTO>();
+
 
     @Bind(R.id.float_btn_add_menu) ButtonFloat mFloatBtnAddMenu;
     private RecyclerView mRecyclerView;
@@ -61,9 +63,8 @@ public class ActivityMain extends AppCompatActivity {
                     JSONArray arrJson = new JSONArray(objectsStr);
 
                     mListItems = new JsonHandler<MenuDTO>().ConvertJsonToClass(arrJson, MenuDTO.class);
-                    mRecyclerViewAdapter = new RecyclerViewAdapter(mContext, mListItems);
-                    mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-                    mRecyclerView.setAdapter(mRecyclerViewAdapter);
+                    mRecyclerViewAdapter.setItems(mListItems);
+                    mRecyclerViewAdapter.notifyDataSetChanged();
                 } catch (Exception e) {
                     Log.e(TAG, "FAIL TO CONVERT BINARY DATA TO JSON");
                 }
@@ -107,12 +108,16 @@ public class ActivityMain extends AppCompatActivity {
         mContext = getApplicationContext();
         mRecyclerView = (RecyclerView) findViewById(R.id.list_menu);
 
+        mRecyclerViewAdapter = new RecyclerViewAdapter(mContext, mListItems);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+
         mNewMenuHandler = getNewMenuHandler();
     }
 
     public NewMenuHandler getNewMenuHandler () {
         if (mNewMenuHandler == null) {
-            mNewMenuHandler = new NewMenuHandler(mContext);
+            mNewMenuHandler = new NewMenuHandler(mContext, mRecyclerViewAdapter);
         }
 
         return mNewMenuHandler;

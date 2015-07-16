@@ -20,6 +20,8 @@ public class MenuDTO {
   //  public int hit;
   //  public boolean isdeprecated;
 
+    public MenuDTO() {
+    }
     public MenuDTO(int id, String label) {
         this._id = id;
         this.label = label;
