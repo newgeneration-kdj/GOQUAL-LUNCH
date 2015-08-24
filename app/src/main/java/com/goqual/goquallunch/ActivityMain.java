@@ -41,6 +41,7 @@ public class ActivityMain extends AppCompatActivity {
 
 
     @Bind(R.id.float_btn_add_menu) ButtonFloat mFloatBtnAddMenu;
+
     private RecyclerView mRecyclerView;
 
     @OnClick({ R.id.float_btn_add_menu }) void onClick(View v) {
@@ -55,7 +56,7 @@ public class ActivityMain extends AppCompatActivity {
 
     void getMenues () {
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://go-qual.co.kr/index.php/Menuapi/menu", new AsyncHttpResponseHandler() {
+        client.get("http://newgeneration.kr/index.php/Menuapi/menu", new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
